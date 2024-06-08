@@ -58,7 +58,7 @@ export function Nav() {
 
     return (
         <nav
-            className={`sticky top-0 flex flex-row justify-center gap-16 h-[40px] bg-[#162430] ${josefin_sans.className}`}
+            className={`sticky top-0 flex flex-row justify-center gap-16 h-[40px] bg-[#162430] z-10 ${josefin_sans.className}`}
             style={{ background: "#162430", fontSize: 20, lineHeight: "40px" }}
         >
             {paths.map((path, index) => (
