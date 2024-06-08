@@ -4,16 +4,19 @@
     text-align: center;
     bottom: 0;
     position: absolute;
-    height: 50%;
-    padding-top: 60%;
-    clip-path: polygon(0% 40%, 100% 20%, 100% 100%, 0% 100%);
+    height: 40%;
+    clip-path: polygon(0% 20%, 100% 0%, 100% 100%, 0% 100%);
     transform: translateY(50%);
     transition-duration: 350ms;
     transition-property: transform, opacity;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
 }
 
 .tabCard:hover > .tabTitle {
     transform: translateY(0%);
     opacity: 1;
-    background: linear-gradient(to top, #CCCCCC, #CCCCCC0F); /* Slanted background that fades out */
+    background: linear-gradient(to top, #CCCCCC, #CCCCCC0F);
 }

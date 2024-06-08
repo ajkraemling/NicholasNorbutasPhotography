@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
-import { usePathname } from 'next/navigation';
-import {Josefin_Sans, Judson} from "next/font/google";
+import {usePathname} from 'next/navigation';
+import {Judson} from "next/font/google";
 
 const judson = Judson({
     weight: '400',
@@ -9,18 +9,12 @@ const judson = Judson({
     display: 'swap',
 })
 
-const josefin_sans = Josefin_Sans({
-    weight: '200',
-    subsets: ['latin'],
-    display: 'swap',
-})
-
 interface headerLinks {
-    pathRoute : string;
-    label : string;
+    pathRoute: string;
+    label: string;
 }
 
-const paths:headerLinks[] = [
+const paths: headerLinks[] = [
     {
         pathRoute: "/dashboard",
         label: "DASHBOARD",
@@ -41,9 +35,9 @@ const paths:headerLinks[] = [
 
 export function Header() {
     return (
-        <header style={{ background: "#162430" }} className={`flex flex-col text-nowrap m-0 p-0 ${judson.className}`}>
+        <header style={{background: "#162430"}} className={`flex flex-col text-nowrap m-0 p-0 ${judson.className}`}>
             <div
-                style={{fontSize: 32, lineHeight: "40px" }}
+                style={{fontSize: 32, lineHeight: "40px"}}
                 className="h-[41px] text-white text-center"
             >
                 NICHOLAS NORBUTAS PHOTOGRAPHY
@@ -58,8 +52,8 @@ export function Nav() {
 
     return (
         <nav
-            className={`sticky top-0 flex flex-row justify-center gap-16 h-[40px] bg-[#162430] z-10 ${josefin_sans.className}`}
-            style={{ background: "#162430", fontSize: 20, lineHeight: "40px" }}
+            className={"sticky top-0 flex flex-row justify-center gap-16 h-[40px] bg-[#162430] z-10"}
+            style={{background: "#162430", fontSize: 20, lineHeight: "40px"}}
         >
             {paths.map((path, index) => (
                 <a
