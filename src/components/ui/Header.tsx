@@ -35,10 +35,10 @@ const paths: headerLinks[] = [
 
 export function Header() {
     return (
-        <header style={{background: "#162430"}} className={`flex flex-col text-nowrap m-0 p-0 ${judson.className}`}>
+        <header style={{background: "#162430"}} className={`flex flex-col text-wrap m-0 p-0 ${judson.className}`}>
             <div
                 style={{fontSize: 32, lineHeight: "40px"}}
-                className="h-[41px] text-white text-center"
+                className="h-[auto] text-white text-center"
             >
                 NICHOLAS NORBUTAS PHOTOGRAPHY
             </div>
