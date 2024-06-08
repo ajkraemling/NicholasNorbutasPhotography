@@ -35,10 +35,10 @@ const paths: headerLinks[] = [
 
 export function Header() {
     return (
-        <header style={{background: "#162430"}} className={`flex flex-col text-wrap m-0 p-0 ${judson.className}`}>
+        <header style={{background: "#162430"}} className={`flex flex-col text-wrap m-0 px-2 ${judson.className}`}>
             <div
                 style={{fontSize: 32, lineHeight: "40px"}}
-                className="h-[auto] text-white text-center"
+                className="h-[auto] text-white text-center text-wrap "
             >
                 NICHOLAS NORBUTAS PHOTOGRAPHY
             </div>
@@ -52,7 +52,8 @@ export function Nav() {
 
     return (
         <nav
-            className={"sticky top-0 flex flex-row justify-center gap-16 h-[40px] bg-[#162430] z-10"}
+            // className={"sticky top-0 flex flex-row justify-center gap-16 h-[40px] bg-[#162430] z-10"}
+            className={"sticky grid grid-cols-2 md:grid-cols-4 top-0 h-[auto] bg-[#162430] z-10 md:px-[10vw] lg:px-[20vw] text-center"}
             style={{background: "#162430", fontSize: 20, lineHeight: "40px"}}
         >
             {paths.map((path, index) => (
