@@ -1,6 +1,5 @@
 'use client'
 import styles from "../styles.module.css";
-import {useState} from "react";
 import PortraitImg from '@/components/images/portrait-nn.jpg';
 import VintageImg from '@/components/images/vintage-nn.jpg';
 import BWImg from '@/components/images/bw-nn.jpg';
