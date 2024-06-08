@@ -1,7 +1,7 @@
 'use client'
 import styles from "../styles.module.css";
 import {useState} from "react";
-import PortraitImg from '@/components/images/portrait-nn.png';
+import PortraitImg from '@/components/images/portrait-nn.jpg';
 import VintageImg from '@/components/images/vintage-nn.jpg';
 import BWImg from '@/components/images/bw-nn.jpg';
 import CarImg from '@/components/images/car-nn.jpg';
@@ -33,7 +33,6 @@ const galleryTabs: GalleryTab[] = [
 ];
 
 export default function Home() {
-    const [sections, setSections] = useState(4)
 
     return (
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 m-4 gap-4">
