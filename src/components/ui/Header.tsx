@@ -1,7 +1,8 @@
 'use client'
-import React from 'react';
-import {usePathname} from 'next/navigation';
+import React, {useEffect, useState} from 'react';
+import {usePathname, useRouter} from 'next/navigation';
 import {Judson} from "next/font/google";
+import {Car} from "lucide-react";
 
 const judson = Judson({
     weight: '400',
@@ -16,7 +17,7 @@ interface headerLinks {
 
 const paths: headerLinks[] = [
     {
-        pathRoute: "/dashboard",
+        pathRoute: "/",
         label: "DASHBOARD",
     },
     {
@@ -48,23 +49,55 @@ export function Header() {
 
 
 export function Nav() {
-    const route = usePathname();
+    const pathname = usePathname();
+    const router = useRouter();
+    const [currentPath, setCurrentPath] = useState(pathname);
+
+    useEffect(() => {
+        if (pathname !== currentPath) {
+            setCurrentPath(pathname);
+        }
+    }, [currentPath, pathname]);
+
+    const handleLinkClick = (path: string) => {
+        if (path !== pathname) {
+            setCurrentPath(path); // Temporarily set for animation
+            router.push(path);
+        }
+    };
 
     return (
-        <nav
-            // className={"sticky top-0 flex flex-row justify-center gap-16 h-[40px] bg-[#162430] z-10"}
-            className={"sticky grid grid-cols-2 md:grid-cols-4 top-0 h-[auto] bg-[#162430] z-10 md:px-[10vw] lg:px-[20vw] text-center"}
-            style={{background: "#162430", fontSize: 20, lineHeight: "40px"}}
-        >
-            {paths.map((path, index) => (
-                <a
-                    key={index}
-                    href={path.pathRoute}
-                    className={`hover:text-amber-400 ${path.pathRoute === route ? "text-amber-300" : "text-white"}`}
+        <nav className="sticky top-0 flex flex-col items-center bg-[#162430] z-10 px-[5vw] md:px-[10vw] lg:px-[20vw] text-center shadow-md w-[100%] overflow-clip">
+            <div className="flex w-full justify-around">
+                {paths.map((path, index) => (
+                    <a
+                        key={index}
+                        onClick={() => handleLinkClick(path.pathRoute)}
+                        className={`hover:text-amber-400 py-2 w-full cursor-pointer ${path.pathRoute === pathname ? "text-amber-300" : "text-white"}`}
+                    >
+                        {path.label}
+                    </a>
+                ))}
+            </div>
+            <div className="relative w-full">
+                <div
+                    className={`absolute -bottom-2 flex w-full`}
+                    style={{
+                        marginLeft: `${(paths.findIndex(p => p.pathRoute === currentPath)) * 25}%`,
+                        transition: "margin-left 1s cubic-bezier(.1,.85,.1,1)"
+                    }}
                 >
-                    {path.label}
-                </a>
-            ))}
+                    <div style={{
+                        width: "25%",
+                        backgroundColor: "#A55B5E",
+                        height: "5px",
+                        alignSelf: "center",
+                        marginTop: "3px",
+                    }}></div>
+                    <Car className="fill-amber-50 text-amber-800"
+                         style={{ color: "#632d2d", fill: "#934e4e", transform: "translateX(-70%) translateY(-17%)" }} />
+                </div>
+            </div>
         </nav>
     );
 }
