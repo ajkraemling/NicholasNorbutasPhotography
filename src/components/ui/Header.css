@@ -1,0 +1,73 @@
+@keyframes cartoonShakeLeft {
+    0% { transform: translateX(-30%) translateY(-17%) rotate(0deg) scaleX(-100%); }
+    20%, 60% { transform: translateX(-30%) translateY(-17%) rotate(-10deg) scaleX(-100%); }
+    40%, 80% { transform: translateX(-30%) translateY(-17%) rotate(10deg) scaleX(-100%); }
+    100% { transform: translateX(-30%) translateY(-17%) rotate(30deg) scaleX(-100%); }
+}
+
+@keyframes cartoonShakeRight {
+    0% { transform: translateX(-30%) translateY(-17%) rotate(0deg) scaleX(100%); }
+    20%, 60% { transform: translateX(-30%) translateY(-17%) rotate(10deg) scaleX(100%); }
+    40%, 80% { transform: translateX(-30%) translateY(-17%) rotate(-10deg) scaleX(100%); }
+    100% { transform: translateX(-30%) translateY(-17%) rotate(-30deg) scaleX(100%); }
+}
+
+@keyframes cartoonShakeLeftToRight {
+    0% { transform: translateX(-30%) translateY(-17%) rotate(0deg) scaleX(-100%); }
+    20% { transform: translateX(-30%) translateY(-17%) rotate(10deg) scaleX(-100%); }
+    40%{ transform: translateX(-30%) translateY(-17%) rotate(-10deg) scaleX(-100%); }
+    60% { transform: translateX(-30%) translateY(-17%) rotate(10deg) scaleX(100%); }
+    80% { transform: translateX(-30%) translateY(-17%) rotate(-10deg) scaleX(100%); }
+    100% { transform: translateX(-30%) translateY(-17%) rotate(-30deg) scaleX(100%); }
+}
+
+@keyframes cartoonShakeRightToLeft {
+    0% { transform: translateX(-30%) translateY(-17%) rotate(0deg) scaleX(100%); }
+    20% { transform: translateX(-30%) translateY(-17%) rotate(-10deg) scaleX(100%); }
+    40%{ transform: translateX(-30%) translateY(-17%) rotate(10deg) scaleX(100%); }
+    60% { transform: translateX(-30%) translateY(-17%) rotate(-10deg) scaleX(-100%); }
+    80% { transform: translateX(-30%) translateY(-17%) rotate(10deg) scaleX(-100%); }
+    100% { transform: translateX(-30%) translateY(-17%) rotate(30deg) scaleX(-100%); }
+}
+
+@keyframes wheelieLeft {
+    0% { transform: translateX(-30%) translateY(-17%) rotate(30deg) scaleX(-100%); }
+    30% { transform: translateX(-30%) translateY(-17%) rotate(15deg) scaleX(-100%); }
+    45% { transform: translateX(-30%) translateY(-17%) rotate(-5deg) scaleX(-100%); }
+    60% { transform: translateX(-30%) translateY(-17%) rotate(5deg) scaleX(-100%); }
+    75% { transform: translateX(-30%) translateY(-17%) rotate(0deg) scaleX(-100%); }
+    100% { transform: translateX(-30%) translateY(-17%) rotate(0deg) scaleX(-100%); }
+}
+
+@keyframes wheelieRight {
+    0% { transform: translateX(-30%) translateY(-17%) rotate(-30deg); }
+    30% { transform: translateX(-30%) translateY(-17%) rotate(-15deg); }
+    45% { transform: translateX(-30%) translateY(-17%) rotate(5deg); }
+    60% { transform: translateX(-30%) translateY(-17%) rotate(-5deg); }
+    75% { transform: translateX(-30%) translateY(-17%) rotate(0deg); }
+    100% { transform: translateX(-30%) translateY(-17%) rotate(0deg); }
+}
+
+.car-shake-left {
+    animation: cartoonShakeLeft 0.5s ease;
+}
+
+.car-shake-right {
+    animation: cartoonShakeRight 0.5s ease;
+}
+
+.car-shake-left-to-right {
+    animation: cartoonShakeLeftToRight 0.5s ease;
+}
+
+.car-shake-right-to-left {
+    animation: cartoonShakeRightToLeft 0.5s ease;
+}
+
+.car-wheelie-left {
+    animation: wheelieLeft 1s ease;
+}
+
+.car-wheelie-right {
+    animation: wheelieRight 1s ease;
+}

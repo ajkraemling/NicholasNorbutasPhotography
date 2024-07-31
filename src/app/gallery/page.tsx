@@ -13,28 +13,17 @@ interface GalleryTab {
     newSrc: string;
 }
 
-const galleryTabs: GalleryTab[] = [
-    {
-        title: "Vintage",
-        img: VintageImg,
-        newSrc: "/gallery/vintage",
-    },
-    {
-        title: "Portraits",
-        img: PortraitImg,
-        newSrc: "/gallery/portraits",
-    },
-    {
-        title: "Black and White",
-        img: BWImg,
-        newSrc: "/gallery/black-white",
-    },
-    {
-        title: "Cars",
-        img: CarImg,
-        newSrc: "/gallery/cars",
-    }
+const galleryItems = [
+    { title: "Vintage", img: VintageImg },
+    { title: "Portraits", img: PortraitImg },
+    { title: "Black and White", img: BWImg },
+    { title: "Cars", img: CarImg },
 ];
+
+const galleryTabs: GalleryTab[] = galleryItems.map(item => ({
+    ...item,
+    newSrc: `/gallery/${item.title.toLowerCase().replace(/ /g, '-')}`,
+}));
 
 export default function Home() {
 
@@ -43,9 +32,9 @@ export default function Home() {
             {galleryTabs.map((tab, key) => (
                 <Link href={tab.newSrc}
                       key={key}
-                      className={`${styles.tabCard} rounded-none flex relative h-[83vh] transition-transform duration-300 transform hover:scale-[103%] overflow-hidden`}
+                      className={`${styles.tabCard} rounded-none flex relative h-[80vh] transition-transform duration-300 transform hover:scale-[103%] overflow-hidden`}
                       style={{
-                          boxShadow: '-4px 4px 4px rgba(0, 0, 0, 0.25)', // x-offset y-offset blur-radius color
+                          boxShadow: '-2px 2px 4px rgba(0, 0, 0, 0.25)', // x-offset y-offset blur-radius color
                       }}
                 >
                     <Image

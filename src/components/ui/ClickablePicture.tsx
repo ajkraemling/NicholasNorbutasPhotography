@@ -26,7 +26,7 @@ export default function ClickablePicture(props: {
                         src={props.img}
                         alt={props.title}
                         objectFit="cover"
-                        className="rounded-xl  group-hover:scale-105 transition-transform duration-300"
+                        className=" group-hover:scale-105 transition-transform duration-300"
                     />
                 {/*</button>*/}
             </DialogTrigger>
