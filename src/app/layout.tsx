@@ -14,11 +14,9 @@ export const metadata: Metadata = {
     description: "Nicholas Norbutas Portfolio Website",
 };
 
-export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
-    children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: {
+    children: React.ReactNode
+}) {
     return (
         <html lang="en">
         <body className={josefin_sans.className} style={{

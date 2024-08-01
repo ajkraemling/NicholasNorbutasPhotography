@@ -70,7 +70,7 @@ export function Nav() {
         if (transitioning || path === pathname) return; // Prevent new link changes during transition
 
         const routeI = paths.findIndex(rt => rt.pathRoute === pathname);
-        console.log("Before UseEffect: isShaking, isWheelie, side, changed: ", isShaking, isWheelie, side, changed);
+        // console.log("Before UseEffect: isShaking, isWheelie, side, changed: ", isShaking, isWheelie, side, changed);
 
         if (routeI < i && !side) { // if link is on left, and car is on right
             setChanged(true);
@@ -107,8 +107,10 @@ export function Nav() {
                 {paths.map((path, index) => (
                     <a
                         key={index}
-                        onClick={() => handleLinkClick(path.pathRoute, index)}
-                        className={`hover:text-amber-400 py-2 w-full hover:cursor-pointer ${path.pathRoute === pathname ? "text-amber-300" : "text-white"}`}
+                        onClick={() => {
+                            handleLinkClick(path.pathRoute, index)
+                        }}
+                        className={`hover:text-amber-400 py-2 w-full hover:cursor-pointer ${(pathname.includes(path.pathRoute) && path.pathRoute != "/") || (path.pathRoute === pathname) ? "text-amber-300" : "text-white"}`}
                     >
                         {path.label}
                     </a>
@@ -118,7 +120,7 @@ export function Nav() {
                 <div
                     className={`absolute -bottom-2 flex w-full car-go`}
                     style={{
-                        marginLeft: `${(paths.findIndex(p => p.pathRoute === currentPath)) * 25}%`,
+                        marginLeft: `${(paths.findIndex(p => (pathname.includes(p.pathRoute) && p.pathRoute != "/") || (p.pathRoute === pathname))) * 25}%`,
                         transition: "margin-left 1.5s cubic-bezier(0.6, 0.05, 0.28, 1)"
                     }}
                 >

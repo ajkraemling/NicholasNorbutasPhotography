@@ -7,7 +7,6 @@ import PortraitImg from "@/components/images/portrait-nn.jpg";
 import CarImg from "@/components/images/car-nn.jpg";
 import {useEffect, useState} from "react";
 
-
 interface GalleryTab {
     title: string;
     img: string | StaticImageData;
@@ -97,16 +96,16 @@ export default function Page() {
     }, [columns]);
 
     return (
-        <div className={`grid grid-cols-${columns} m-2 gap-2`}>
-            {gallery.map((column, index) => (
-                <div key={index} >
-                    {column.map((tab, tabIndex) => (
-                        <div key={tabIndex}>
-                            <ClickablePicture img={tab.img} title={tab.title} description={tab.description}/>
-                        </div>
-                    ))}
-                </div>
-            ))}
-        </div>
+            <div className={`grid grid-cols-${columns} p-2 gap-2`}>
+                {gallery.map((column, index) => (
+                    <div key={index}>
+                        {column.map((tab, tabIndex) => (
+                            <div key={tabIndex}>
+                                <ClickablePicture img={tab.img} title={tab.title} description={tab.description}/>
+                            </div>
+                        ))}
+                    </div>
+                ))}
+            </div>
     );
 }

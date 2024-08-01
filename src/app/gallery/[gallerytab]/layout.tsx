@@ -1,32 +1,9 @@
-import type {Metadata} from "next";
-import {Josefin_Sans} from "next/font/google";
-import {Header, Nav} from "@/components/ui/Header";
-
-const josefin_sans = Josefin_Sans({
-    weight: '200',
-    subsets: ['latin'],
-    display: 'swap',
-})
-
-export const metadata: Metadata = {
-    title: "Nicholas Norbutas Photography",
-    description: "Nicholas Norbutas Portfolio Website",
-};
-
-export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
-    children: React.ReactNode;
-}>) {
+export default function DashboardLayout({ children }: {
+    children: React.ReactNode
+}) {
     return (
-        <html lang="en">
-        <body className={josefin_sans.className} style={{
-            backgroundColor: '#FFFFFF',
-        }}>
-        <Header/>
-        <Nav/>
-        {children}
-        </body>
-        </html>
-    );
+        <div className="bg-white">
+            {children}
+        </div>
+    )
 }
